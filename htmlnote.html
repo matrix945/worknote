@@ -1,0 +1,349 @@
+General:
+10/3 = 3.333333333
+
+
+
+
+
+JavaScript accepts both double and single quotes
+
+In HTML, JavaScript code must be inserted between <script> and </script> tags.
+
+You can place any number of scripts in an HTML document.
+
+Scripts can be placed in the <body>, or in the <head> section of an HTML page, or in both.
+
+
+External scripts are practical when the same code is used in many different web pages.
+
+JavaScript files have the file extension .js.
+
+To use an external script, put the name of the script file in the src (source) attribute of a <script> tag:
+
+ <!DOCTYPE html>
+<html>
+<body>
+
+<script src="myScript.js"></script>
+
+</body>
+</html>
+
+You can place an external script reference in <head> or <body> as you like.
+
+The script will behave as if it was located exactly where the <script> tag is located.
+
+
+
+External scripts can be referenced with a full URL or with a path relative to the current web page.
+
+This example uses a full URL to link to a script: 
+<script src="https://www.w3schools.com/js/myScript1.js"></script> 
+
+same folder  <script src="myScript1.js"></script> 
+different  <script src="/js/myScript1.js"></script> 
+
+
+
+JavaScript Output
+Writing into an HTML element, using innerHTML.
+Writing into the HTML output using document.write().
+Writing into an alert box, using window.alert().
+Writing into the browser console, using console.log().
+
+
+Using document.write() after an HTML document is fully loaded, will delete all existing HTML:
+
+<script>
+window.alert(5 + 6);
+</script>
+
+syntax
+Code after double slashes // or between /* and */ is treated as a comment.
+In JavaScript, the first character must be a letter, an underscore (_), or a dollar sign ($).
+
+Subsequent characters may be letters, digits, underscores, or dollar signs.
+Numbers are not allowed as the first character.
+
+
+$$$JavaScript Statements
+
+In HTML, JavaScript statements are "instructions" to be "executed" by the web browser.
+
+
+$$$JavaScript Comments
+//
+/* ... */
+
+
+
+$$$JavaScript variables
+After the declaration, the variable has no value. (Technically it has the value of undefined)
+Start the statement with var and separate the variables by comma: like var person = "John Doe", carName = "Volvo", price = 200; 
+
+Re-Declaring JavaScript Variables
+
+If you re-declare a JavaScript variable, it will not lose its value.
+The variable carName will still have the value "Volvo" after the execution of these statements:
+
+var x = 2 + 3 + "5" --> 55
+var x = "5" + 2 + 3; --->523
+
+
+
+$$$JavaScript Operators
+== 	equal to
+=== 	equal value and equal type
+!= 	not equal
+!== 	not equal value or not equal type
+typeof 	Returns the type of a variable
+instanceof 	Returns true if an object is an instance of an object type
+Bitwise Operators IDK
+=== 	Strict equal
+
+$$$JavaScript Data Types
+var x = {firstName:"John", lastName:"Doe"};    // Object 
+ var y = 123e5;      // 12300000
+var z = 123e-5;     // 0.00123
+var cars = ["Saab", "Volvo", "BMW"];  //array
+primitive data 
+    string
+    number
+    boolean
+    null
+    undefined
+
+	
+Unfortunately, in JavaScript, the data type of null is an object.
+You can consider it a bug in JavaScript that typeof null is an object. It should be null.
+
+
+In JavaScript, a variable without a value, has the value undefined. The typeof is also undefined.
+var person;                // Value is undefined, type is undefined
+Any variable can be emptied, by setting the value to undefined. The type will also be undefined.
+person = undefined;        // Value is undefined, type is undefined
+var person = null;         // Value is null, but type is still an object
+var person = undefined;   // Value is undefined, type is undefined
+typeof undefined           // undefined
+typeof null                // object
+null === undefined         // false
+null == undefined          // true
+
+
+
+$$$JavaScript Functions
+var x = myFunction(4, 3);        // Function is called, return value will end up in x
+
+function myFunction(a, b) {
+    return a * b;                // Function returns the product of a and b
+}
+
+
+
+The () Operator Invokes the Function
+
+Using the example above, toCelsius refers to the function object, and toCelsius() refers to the function result.
+
+Accessing a function without () will return the function definition instead of the function result:
+
+
+
+function toCelsius(fahrenheit) {
+    return (5/9) * (fahrenheit-32);
+}
+document.getElementById("demo").innerHTML = toCelsius;
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Functions</h2>
+
+<p>Accessing a function without () will return the function definition instead of the function result:</p>
+<p id="demo"></p>
+
+<script>
+
+function toCelsius(f) {
+    return (5/9) * (f-32);
+}
+document.getElementById("demo").innerHTML = toCelsius;
+</script>
+
+</body>
+</html>
+
+JavaScript Functions
+
+Accessing a function without () will return the function definition instead of the function result:
+
+function toCelsius(f) { return (5/9) * (f-32); }
+
+
+$$$JavaScript Objects
+Accessing Object Methods by . and []
+var person = {
+    firstName:"John",
+    lastName:"Doe",
+    age:50,
+    eyeColor:"blue"
+}; 
+
+objectName.propertyName objectName["propertyName"]
+
+
+
+
+$$$
+
+
+$$$
+You can also break up a code line within a text string with a single backslash: A safer way to break up a string, is to use string addition:
+document.getElementById("demo").innerHTML = "Hello \
+Dolly!"; 
+
+
+Normally, JavaScript strings are primitive values, created from literals: var firstName = "John"
+
+But strings can also be defined as objects with the keyword new: var firstName = new String("John")
+
+
+dont use new to creat string it will cause some problems like 
+ var x = "John";             
+var y = new String("John");
+// (x == y) is true because x and y have equal values 
+
+ var x = "John";             
+var y = new String("John");
+// (x === y) is false because x and y have different types (string and object) 
+
+var x = new String("John");             
+var y = new String("John");
+// (x == y) is false because x and y are different objects
+
+var x = new String("John");             
+var y = new String("John");
+// (x === y) is false because x and y are different objects
+
+$$$ String method
+
+var str = "HELLO WORLD";
+
+str[0];                   // returns H
+
+This is unsafe and unpredictable:
+
+    It does not work in all browsers (not in IE5, IE6, IE7)
+    It makes strings look like arrays (but they are not)
+    str[0] = "H" does not give an error (but does not work)
+
+
+The charAt() Method
+The charAt() method returns the character at a specified index (position) in a string:
+
+var str = "HELLO WORLD";
+str.charAt(0);            // returns H 
+
+$$$ Numbers
+
+NaN - Not a Number
+
+NaN is a JavaScript reserved word indicating that a number is not a legal number.
+
+Trying to do arithmetic with a non-numeric string will result in NaN (Not a Number):
+var x = 100 / "Apple";  // x will be NaN (Not a Number)
+var x = 100 / "10";     // x will be 10
+Numbers Can be Objects
+
+Normally JavaScript numbers are primitive values created from literals: var x = 123
+
+But numbers can also be defined as objects with the keyword new: var y = new Number(123)
+
+
+$$$Array
+The Difference Between Arrays and Objects
+
+In JavaScript, arrays use numbered indexes.  
+
+In JavaScript, objects use named indexes.
+ var person = [];
+person["firstName"] = "John";
+person["lastName"] = "Doe";
+person["age"] = 46;
+var x = person.length;         // person.length will return 0
+var y = person[0];             // person[0] will return undefined
+Use [] instead.
+
+These two different statements both create a new empty array named points:
+
+var points = new Array();         // Bad
+var points = [];                  // Good 
+
+ var points = new Array(40, 100, 1, 5, 25, 10); // Bad
+var points = [40, 100, 1, 5, 25, 10];          // Good 
+var points = new Array(40, 100);  // Creates an array with two elements (40 and 100)
+ var points = new Array(40);       // Creates an array with 40 undefined elements !!!!!
+
+ 
+ 
+ 
+ 
+ 
+$$$JavaScript Hoisting 
+JavaScript Declarations are Hoisted
+In JavaScript, a variable can be declared after it has been used.
+In other words; a variable can be used before it has been declared.
+To understand this, you have to understand the term "hoisting".
+Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope (to the top of the current script or the current function).
+JavaScript Initializations are Not Hoisted
+ 
+ <!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+var x = 5;  // Initialize x
+y = 89;
+elem = document.getElementById("demo");            // Find an element 
+elem.innerHTML = "x is " + x + " and y is " + y;    // Display x and y
+
+var y = 7;  // Initialize y
+</script>
+
+</body>
+</html> 
+
+
+---->>>>x is 5 and y is 89
+
+
+
+
+$$$JavaScript Use Strict
+Using an object, without declaring it, is not allowed:Deleting a variable (or object) is not allowed.
+Deleting a function is not allowed.
+Duplicating a parameter name is not allowed:
+Octal numeric literals are not allowed:
+Escape characters are not allowed:
+Writing to a read-only property is not allowed:
+Writing to a get-only property is not allowed:
+Deleting an undeletable property is not allowed:
+The string "eval" cannot be used as a variable:
+The string "arguments" cannot be used as a variable:
+The with statement is not allowed:
+For security reasons, eval() is not allowed to create variables in the scope from which it was called:
+
+JavaScript Performance
+Statements or assignments that can be placed outside the loop will make the loop run faster. 
+
+
+
+
+$$$
+var person = {fname:"John", lname:"Doe", age:25};
+
+for (x in person) {
+    txt += person[x];
+}

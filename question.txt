@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>My First Web Page</h2>
+<p>My First Paragraph.</p>
+
+<aaa id="demo"></aaaaa>
+
+<script>
+document.getElementById("demo").innerHTML = 5 + 6;
+</script>
+
+</body>
+</html> 
+
+
+function isDisabled()
+{
+    return false;
+}
+if (isDisabled)
+{
+    alert("Yay!");
+}
+
+
+why if("dasdasdasda"){invoked}???
+
+
+
+JavaScript Declarations are Hoisted
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+x = 5; // Assign 5 to x
+
+elem = document.getElementById("demo"); // Find an element 
+elem.innerHTML = x;                     // Display x in the element
+
+//var x; // Declare x
+</script>
+
+</body>
+</html> 
