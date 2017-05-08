@@ -1,0 +1,10 @@
+selenium 3.4.0 -> chrom good
+			   -> ie(fix security issue ok) type slowly get inside cerfication problem some pages cant load through vagrant
+			   -> firefox X cant open
+			   
+selenium 2.46.0 -> chrom good
+				-> ie(fix security issue ok) type slowly password wrong?
+				when i try second time no more pasword interface do something slowly
+			    -> firefox X open but cant input address
+
+			   
